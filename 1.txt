@@ -1,4 +1,0 @@
-Hello Charvi, Welcome to programming world of Python!
-2 + 3 = 5
-
-4 + 6 = 10
