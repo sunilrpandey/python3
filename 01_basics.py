@@ -1,6 +1,6 @@
 #import math
 from math import pi
-from swampy.TurtleWorld import *
+#from swampy.TurtleWorld import *
 
 print("Hello Python 3!!",end="  ") # enters space after print
 print("This is second line")

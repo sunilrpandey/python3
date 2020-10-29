@@ -34,6 +34,16 @@ def demo_tuple_creation() :
 
 def demo_tuple_operations():
 
+    # tpl = (10,20,"Hello",20.5) #  will be error
+    tpl = (10,20,20.5) 
+    print("Min of Tuple : ", min(tpl)) # will print 10
+    print("Max of Tuple : ", max(tpl)) # will print 20.5
+    print("Len of Tuple : ", len(tpl)) # will print 3 
+
+    lst = [10,20,30]
+    tpl = tuple(lst)
+    print("Tuple from list : ", tpl)
+
 
     a , b = 3, 5
     print("a = {}, b = {}".format(a,b))
@@ -109,8 +119,8 @@ def demo_tuple_dictionary():
 
 # DEMOS
 #demo_tuple_creation()
-#demo_tuple_operations()
+demo_tuple_operations()
 #demo_tuple_as_function_arg()
 #demo_tuple_as_return_value()
 #demo_tuple_list()
-demo_tuple_dictionary()
+#demo_tuple_dictionary()

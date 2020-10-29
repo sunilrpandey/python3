@@ -1,5 +1,7 @@
 import os
 import sys
+#learning : ref string func 
+# https://www.programiz.com/python-programming/methods/string/endswith
 
 def demo_str_2_list():
     str = "Honesty is the best policy"
@@ -30,13 +32,17 @@ def demo_immutable_string():
 
 def demo_string_func():
     str =  "Hello Python"
+    print("Capitalize : ", "hello world".capitalize())
+    print("Count : ", str.count("l", 0, len(str)))
     print("length of string is : ", len(str))
     print("string in upper case ", str.upper())
+    print("lstrip demo:", "44444      Hello World!!!!!!!".lstrip('4'))
+    print("rstrip demo:", "44444      Hello World!!!!!!!".rstrip('!'))
     print("Index of P : ", str.index('P'))
     print("Index of Python : ", str.find("Python"))
     print("Check if string has e : ", 'e' in str)
     print("Check if string has a : ", 'a' in str)
-    print("Check if string has 'Python' : ", "Python" in str)
+    print("Check if string has 'Python' : ", "Python" in str)    
 
     first_word = str.split(sep=" ")[0]
     if(first_word == "Hello"):
@@ -49,4 +55,5 @@ def demo_string_func():
 
 # demo_slices()
 # demo_immutable_string()
+#demo_str_2_list()
 demo_string_func()

@@ -38,9 +38,32 @@ def demo_list_element_access():
     print("\n")
 
 def demo_list_operations():
-    list1 = [1,2,3]
-    list2 = [4,5]
 
+    mylist1 = [10,20,30]
+    mylist1.reverse()
+    print(mylist1)
+    
+    mylist = [10,20,30]
+    
+    mylist.insert(-2,40) # [10, 40, 20, 30]
+    mylist.insert(1,400) # [10, 400, 40, 20, 30]
+    print(mylist)
+    print("Max = ", max(mylist)) #max element
+    print("Min = ", min(mylist)) #min element
+    print("Length = ", len(mylist)) # number of element
+    print("Inded of 20 = ", mylist.index(20))
+    print("Element at 3 removed : ", mylist.pop(3)) # 20 is popped
+    print("Last Element : ", mylist.pop()) # 30 is popped
+    print("Now mylist is : ", mylist)
+    print("Remove 400 : ")
+    mylist.remove(400) # removed
+    
+    list1 = [1,2,3]
+    list2 = [4,5] 
+    #print("Comparison : ", cmp(list1,list2))
+    print("Twice the list : ", list2 * 2)
+    
+    
     sum_list = list2 + list1
     print("sum list (list1 + list2) : ", sum_list)
     
@@ -120,8 +143,8 @@ def demo_string_list_of_char_comparison():
 
 
 # demo_list_element_access()
-# demo_list_operations()
+demo_list_operations()
 # demo_list_operations_ex()
 
-demo_string_list_of_char_comparison()
+#demo_string_list_of_char_comparison()
 
