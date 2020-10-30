@@ -14,7 +14,6 @@ def demo_str_2_list():
     for word in list_word:
         print(word, end = "_")
 
-
 def demo_slices():
     str = "Hello World"
     print("First 7 : ",str[0:7])
@@ -53,7 +52,7 @@ def demo_string_func():
 
 # === demos
 
+# demo_str_2_list()
 # demo_slices()
 # demo_immutable_string()
-#demo_str_2_list()
 demo_string_func()

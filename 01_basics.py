@@ -14,7 +14,7 @@ a = "last_name"
 # substitute operator using {}.format 
 print("first_name {}".format(a))
 
-a = "pyaroo"
-b = "parth"
+a = "left"
+b = "right"
 
-print(a,b, sep=' : ')
+print(a,b, sep=' : ') 
