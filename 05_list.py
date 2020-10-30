@@ -1,14 +1,11 @@
 
-#Learnign : append/extend modifies the list whereas + operator creates new list
+# Learnings
+# append/extend modifies the list whereas + operator creates new list
 # slice also creates a new list
 
-# Don’t forget that most list methods modify the argument and return None . This is
-#the opposite of the string methods, which return a new string and leave the original
-#alone.
-
-
-
-
+# Don’t forget that most list methods modifies the argument and return None . This is
+# the opposite of the string methods, which return a new string and leave the original
+# alone.
 
 def demo_list_element_access():
     list_is_seq = [10,23,45,67]
@@ -95,7 +92,7 @@ def demo_list_operations_ex():
     list2 = [4,5]
 
     sum_list = list2 + list1
-    print("sum list1 + list2 : ", sum_list)
+    print("sum list2 + list1 : ", sum_list)
 
     print("Pop top element", sum_list.pop()) # returns top element
     print("updated sum_list", sum_list)
@@ -143,8 +140,8 @@ def demo_string_list_of_char_comparison():
 
 
 # demo_list_element_access()
-demo_list_operations()
+# demo_list_operations()
 # demo_list_operations_ex()
 
-#demo_string_list_of_char_comparison()
+demo_string_list_of_char_comparison()
 
