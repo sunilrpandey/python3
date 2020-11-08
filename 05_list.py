@@ -8,6 +8,21 @@
 # alone.
 
 def demo_list_element_access():
+    list_int = list()
+    if(len(list_int) == 0):
+        print("List is Empty!")
+    
+    list_int_2 = []
+    if(len(list_int_2) == 0):
+        print("List is Empty!")
+
+    # if we do list_int_2 = list_int, it will be same
+    if(list_int is list_int_2):
+        print("Same")
+    else:
+        print("Not Same")
+
+    
     list_is_seq = [10,23,45,67]
     print ("Element of list can be homogeneous as : ",list_is_seq)
 
@@ -57,10 +72,9 @@ def demo_list_operations():
     
     list1 = [1,2,3]
     list2 = [4,5] 
-    #print("Comparison : ", cmp(list1,list2))
+    # print("Comparison : ", cmp(list1,list2)) # you need to write cmp function to compare two list
     print("Twice the list : ", list2 * 2)
-    
-    
+        
     sum_list = list2 + list1
     print("sum list (list1 + list2) : ", sum_list)
     
@@ -73,7 +87,7 @@ def demo_list_operations():
     list3 = [6, ["Happy ","Coding", 2.0]]
 
     sum_list = sum_list + list3
-    print("sum of different lists", sum_list)
+    print("adding hetrogenous lists items", sum_list)
 
     list4 = [1,2]
     print("Same items get multiplied in case of multiplication, wil print [1,2,1,2] : ", list4 * 2)
@@ -103,8 +117,6 @@ def demo_list_operations_ex():
     sum_list.remove(1) #takes element as argument
     print("list after removing 1 : ", sum_list)
 
-
-
 def remvoe_element_from_list(lst,id):
     del lst[id] 
 
@@ -130,7 +142,7 @@ def demo_string_list_of_char_comparison():
 
     #when  you pass a list to a functio, it is passed by reference
     remvoe_element_from_list(c,1)
-    print("elemtn at index 1 must be deleted, now list c  : ",c)
+    print("elemtn at index 1 must be deleted, now list c  : ",c) # so does a
 
     lst = ['a', 'b','c']
     lst = lst[1:]
@@ -139,9 +151,8 @@ def demo_string_list_of_char_comparison():
 
 
 
-# demo_list_element_access()
+demo_list_element_access()
 # demo_list_operations()
 # demo_list_operations_ex()
-
-demo_string_list_of_char_comparison()
+# demo_string_list_of_char_comparison()
 
