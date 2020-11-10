@@ -46,8 +46,6 @@ def dump_file_content_using_with_open(filename):
         print("\n\n\nThats all from the file")
     
     
-
-
 def demo_file_with_open():
     filename = "my_file.txt"
     create_open_file(filename,"wb")

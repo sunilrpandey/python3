@@ -1,0 +1,3 @@
+import maininfile
+
+maininfile.testFunToExport()
