@@ -49,7 +49,7 @@
 
 #print(x is not y)
 
-
+"""
 str1 = "KPIT"
 
 print(str1[: : -1])
@@ -59,3 +59,15 @@ print(1 in y)
 y = {1:'a',2:'b'}
 
 print('a' in y)
+"""
+
+def TestNotTrue():
+    if not True: # not True prints else part, not False prints else part
+        print("Sunil")
+    else: 
+        print ("Pandey")
+
+if __name__ == "__main__" :
+    TestNotTrue()
+else :
+    print("Please import to use")
