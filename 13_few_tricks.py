@@ -97,6 +97,8 @@ def demo_tricks():
     #demo_variable_arg()
     #reverse_string()
     #check_if_palindrome("madam")
+
+    
     
 
 
