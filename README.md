@@ -2,7 +2,13 @@
 ## Misc Funcs/Concepts
 ### dir(obj) 
 Returns all properties and methods of the specified object, without the values
-obj can be struct function or any other object
+obj can be struct function or any other object, or even can be empty 
+```py
+    number = [1, 2, 3]
+    print(dir(number))
+
+    print(dir())  # also valid
+```
 
 
 ## Print Statements
