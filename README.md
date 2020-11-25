@@ -1,4 +1,9 @@
 # Notes
+## Misc Funcs/Concepts
+### dir(obj) 
+Returns all properties and methods of the specified object, without the values
+obj can be struct function or any other object
+
 
 ## Print Statements
 Enters space "  " after print instead of new line
