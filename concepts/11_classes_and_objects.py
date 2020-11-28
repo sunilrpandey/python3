@@ -72,4 +72,6 @@ def demo_class():
     test_animals.get_type(cat)
     test_animals.get_type(dog)
 
-demo_class()
+if __name__ == "__main__":
+    demo_class()
+    #demo_reusability()
