@@ -1,12 +1,12 @@
 # unordered collection of unique element
 def demo_sets_creation():
-    
-    #empty set
+
+    # empty set
     n1 = {}
     print(n1)
 
     # simply int set
-    n = {3,5,7,4}
+    n = {3, 5, 7, 4}
     print(n)
 
     # in/not in for set

@@ -1,53 +1,53 @@
-#x = [i**+1 for i in range(3)]
-#print(x)
+# x = [i**+1 for i in range(3)]
+# print(x)
 
-#List1 = [1.7, 5.6, 0.3, 8.8]
+# List1 = [1.7, 5.6, 0.3, 8.8]
 
-#List2 = [5.3, 8.9, 6.0, 2.4]
+# List2 = [5.3, 8.9, 6.0, 2.4]
 
-#List3 = [List1, List2]
+# List3 = [List1, List2]
 
-#List3[1].reverse()
+# List3[1].reverse()
 
-#print(List3[1])
+# print(List3[1])
 
-#str = "interpreter"
+# str = "interpreter"
 
-#print (str[-3])
+# print (str[-3])
 
-#x = 10
+# x = 10
 
-#y = 10.0
+# y = 10.0
 
-#print('x== y is',x==y)
+# print('x== y is',x==y)
 
-#dict1 = {'E1':3.4,'E2':4.5,'E3':5.6,'E4':6.7}
-#print(len(dict1))
-#s2 = 'wasn\'t'
+# dict1 = {'E1':3.4,'E2':4.5,'E3':5.6,'E4':6.7}
+# print(len(dict1))
+# s2 = 'wasn\'t'
 
-#print s2
+# print s2
 
-#x = True
+# x = True
 
-#y = False
+# y = False
 
-#print('x or y is',x or y)
+# print('x or y is',x or y)
 
-#dict1 = {'E1':3.4,'E2':4.5,'E3':5.6,'E4':6.7}
+# dict1 = {'E1':3.4,'E2':4.5,'E3':5.6,'E4':6.7}
 
-#print(dict1.keys())
+# print(dict1.keys())
 
-#letters = ['a', 'b', 'c', 'd']
+# letters = ['a', 'b', 'c', 'd']
 
-#letters.pop(2)
+# letters.pop(2)
 
-#print(letters)
+# print(letters)
 
-#x = 10
+# x = 10
 
-#y = 10.0
+# y = 10.0
 
-#print(x is not y)
+# print(x is not y)
 
 """
 str1 = "KPIT"
@@ -61,13 +61,15 @@ y = {1:'a',2:'b'}
 print('a' in y)
 """
 
-def TestNotTrue():
-    if not True: # not True prints else part, not False prints else part
-        print("Sunil")
-    else: 
-        print ("Pandey")
 
-if __name__ == "__main__" :
+def TestNotTrue():
+    if not True:  # not True prints else part, not False prints else part
+        print("Sunil")
+    else:
+        print("Pandey")
+
+
+if __name__ == "__main__":
     TestNotTrue()
-else :
+else:
     print("Please import to use")
