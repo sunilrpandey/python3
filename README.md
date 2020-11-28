@@ -10,6 +10,12 @@ obj can be struct function or any other object, or even can be empty
     print(dir())  # also valid
 ```
 
+## Python tools
+- pylint : install using pip/pip3
+- black : install using pip/pip3 // for formatting
+### Useful VS Code extension
+- pylance
+- bookmarks
 
 ## Print Statements
 Enters space "  " after print instead of new line
@@ -28,11 +34,11 @@ Prints separator
 ```python
 def reuse_fun(message):
     print(message)
-    demo_math();
-    demo_math();
+    demo_math()
+    demo_math()
     
 def pass_func_as_arg_toprint(f, msg):
-    f(msg);
+    f(msg)
 ```
 Python have conditional control, recursion, nested loop, break/continue etc
 ```python
