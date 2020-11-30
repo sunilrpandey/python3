@@ -22,9 +22,20 @@ def pass_func_as_arg_toprint(f, msg):
     f(msg)
 
 
-demo_math()
+def demo_reuse_funcs():
+    msg = "\nfunc being re-used, called two times in one func"
+    reuse_fun(msg)
 
-msg = "\nfunc being re-used, called two times in one func"
-reuse_fun(msg)
+def demo_join_list_of_string():
+    lst_of_str = ["this", "is", "complete","string"]
+    complete_str = " ".join(str for str in lst_of_str)
+    print(complete_str)
 
-pass_func_as_arg_toprint(func_with_msg, "Func as arg is being used to print")
+if __name__ == "__main__":
+    #demo_math()    
+    #demo_reuse_funcs()
+    #pass_func_as_arg_toprint(func_with_msg, "Func as arg is being used to print")
+    demo_join_list_of_string()
+
+    
+
