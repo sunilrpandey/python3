@@ -5,10 +5,31 @@ Program python on VSCode
 2. python3 --version
 3. Right click on editor and you can run whole file in terminal, or select few line and run etc
 
-Keyboard Shortcuts
-- Commnad Pallete -  Control + Shift + P
-- Find all reference - Alt + shift + F12
-- Run  - Ctrl + Shift + D
+## set default python to python3  if it is python27
+Add below line to ~/.bashrc
+```sh
+alias python=python3
+```
+to see commands specific to python27, e.g. to get version of python 2 prefix python with command
+```sh
+$ command python --version
+```
+
+## Update Python (say from 3.6 to 3.8)
+Install it 
+```sh
+$ sudo apt update -y
+$ sudo apt install python3.8
+```
+and set 3.6 and 3.8 as alternative
+```sh
+$ sudo update-alternatives --install /usr/bin/python3 python3 /usr/bin/python3.6 1
+$ sudo update-alternatives --install /usr/bin/python3 python3 /usr/bin/python3.8 2
+```
+Select the option(index for python 3.8) from list of alternatives what one can get by running 
+```sh
+sudo update-alternatives --config python3
+```
 
 ## Debugging
 1. Set breakpoint using F9 or click same as visual studio
