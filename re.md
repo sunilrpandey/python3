@@ -9,6 +9,7 @@ Need to escape these using '\\' e.g. \\.
 Raw String
 > print(r'\tTab)
 
+
 re compile/finditer
 ```py
 text = "abc345sdfajsdabc"
@@ -100,8 +101,8 @@ re.compile(r'start',re.I)
 
 ref  
 https://www.youtube.com/watch?v=K8L6KVGG-7o
-https://github.com/CoreyMSchafer/code_snippets/tree/master/Python-Regular-Expressions
-
+https://github.com/CoreyMSchafer/code_snippets/tree/master/Python-Regular-Expressions  
+https://coreyms.com/
 
 
 
