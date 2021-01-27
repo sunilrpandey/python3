@@ -1,3 +1,4 @@
+print added 3
 # Notes
 ## Misc Funcs/Concepts
 ### dir(obj) 
