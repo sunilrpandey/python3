@@ -1,5 +1,4 @@
 
-prlint added
 # Notes
 ## Misc Funcs/Concepts
 ### dir(obj) 
