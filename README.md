@@ -1,4 +1,4 @@
-
+adsfasd
 # Notes
 ## Misc Funcs/Concepts
 ### dir(obj) 
