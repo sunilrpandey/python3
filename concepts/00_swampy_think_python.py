@@ -41,13 +41,9 @@ def demo_draw_circle():
     draw_circle(bob, radius)
 
 
-# draw_square(bob)
-
-# demo_draw_polygon()
-
-demo_draw_circle()
-
-
-wait_for_user()
-
-print(bob)
+if __name__ == "__main__":
+    # draw_square(bob)
+    # demo_draw_polygon()
+    demo_draw_circle()
+    wait_for_user()
+    print(bob)

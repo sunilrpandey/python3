@@ -1,3 +1,5 @@
+import itertools
+
 def demo_dictionary_creation():
     # create empty dict
     empty_dict = dict()
@@ -32,14 +34,15 @@ def demo_dictionary_creation():
     d5 = dict([("one", 1), ("two", 2), ("three", 3), ("ten", 10)])
     print(d5)
 
-    for k, v in enumerate(d5):
-        print(k, v)  # will enumerate keyes i.e. 0 : key1, 1 : key2 etc
+    for idx, ky in enumerate(d5):
+        print(idx, ky)  # will enumerate keyes i.e. 0 : key1, 1 : key2 etc
 
     return
 
 
 def demo_dictionary_operations():
 
+    print("Demo Dictionary operations")
     # using print to view dict items
     d = {"one": 1, "two": 2, "three": 3}
     print(d)
@@ -57,7 +60,7 @@ def demo_dictionary_operations():
     print()
 
     # iterate through  key/values to print items
-    print("items in dictionary : ")
+    print("Items in dictionary : ")
     for k, v in d.items():
         print(k, v, sep="->", end=",")
     print()
@@ -128,8 +131,34 @@ def demo_looping_techniques_for_containers():
     print(reversed_list)
     print("\n")
 
+def demo_use_iter_only_once():
+    reversed_list = reversed(range(5, 15, 2))
+    for i in reversed_list:
+        print(i, end = "  ")
+    print()
+    # it does not print anything in below loop
+    for j in reversed_list:
+        print(j, end = "  ")
+    print()
+
+    # you can use itertools' tee function to create copy of iterators
+    r_list = reversed(range(5, 15, 2))
+    it1, it2 = itertools.tee(r_list,2)
+
+    for j in it1:
+        print(j, end = "  ")
+    print()
+    
+    for j in it2:
+        print(j, end = "  ")
+    print()    
+    
+
+
 
 # ==== demos
-# demo_dictionary_creation()
-# demo_dictionary_operations()
-demo_looping_techniques_for_containers()
+if __name__ == "__main__":
+    # demo_dictionary_creation()
+    # demo_dictionary_operations()
+    # demo_looping_techniques_for_containers()
+    demo_use_iter_only_once()

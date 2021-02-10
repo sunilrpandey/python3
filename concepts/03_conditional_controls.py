@@ -52,7 +52,8 @@ def demo_nested_for_loop():
         print("\n")
 
 
-# demo_while_if_else()
-# demo_recursive_function()
-# demo_for_loop()
-demo_nested_for_loop()
+if __name__ == "__main__":
+    # demo_while_if_else()
+    # demo_recursive_function()
+    demo_for_loop()
+    # demo_nested_for_loop()

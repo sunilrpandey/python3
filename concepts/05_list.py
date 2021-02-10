@@ -96,14 +96,17 @@ def demo_list_operations():
 
     # slice works similar to string
 
-    list4.append(3)  # this does not return list
+    list4.append(3) # this does not return list
     print("append method updates itself but does not return list : ", list4)
 
-    list4.extend(list1)  # this also does not return list
-    print(
-        "extend function updates itself but does not return list : ",
-        list4.extend(list1),
-    )
+    another_list = [4,5]
+    list4.append(another_list) # will output [1,2,3,[4,5]] not [1,2,3,4,5]
+    print("append adds whole list not individual elem : ", list4)
+    
+    lst_to_extend = [6,7]
+    list4.extend(lst_to_extend) # this does not return list but adds 6, 7 to existing list make list4 = [1, 2, 3, [4, 5], 6, 7]
+    print(list4)
+    print("extend function updates itself but does not return list : ", list4.extend(list1))
 
 
 def demo_list_operations_ex():

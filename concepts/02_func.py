@@ -18,7 +18,7 @@ def func_with_msg(msg):
     print(msg)
 
 
-def pass_func_as_arg_toprint(f, msg):
+def demo_pass_func_as_arg_toprint(f, msg):
     f(msg)
 
 
@@ -36,5 +36,5 @@ def demo_join_list_of_string():
 if __name__ == "__main__":
     # demo_math()
     # demo_reuse_funcs()
-    # pass_func_as_arg_toprint(func_with_msg, "Func as arg is being used to print")
+    # demo_pass_func_as_arg_toprint(func_with_msg, "Func as arg is being used to print")
     demo_join_list_of_string()
