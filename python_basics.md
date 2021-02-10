@@ -52,7 +52,6 @@ launch.json is the standard name for a file containing debugging configurations.
 2. sudo apt-get install python3-matplotlib
 
 # TODO:
-vscode settting for c++ projects 
 Python : Add example to take argument from command line 
 https://www.tutorialspoint.com/python/python_command_line_arguments.htm
 
