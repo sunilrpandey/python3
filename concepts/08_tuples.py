@@ -22,14 +22,14 @@ def demo_tuple_creation():
 
     # string to tuple elements
     t2 = tuple("abrakadabra")
-    print("tuple elements from t2 -> ", t2)
+    print("tuple elements from t2 -> ", t2) # it allows duplicates as well
 
     # access method is same as list i.e. 0 based l;
     print("t2[0] -> {}\nt2[3:6] -> {}".format(t2[0], t2[3:6]))
 
     # you can not modify tuple elements but can replace tuple
-    # t3 = t2[0] + t2[3:6] # not working, says can not concatanate
-    t2 = ("A",) + t2[3:6]
+    #t3 = t2[0] + t2[3:6] # not working, says can not concatanate
+    t2 = ("A",) + t2[3:6] # please do notice , after "A"
     print("relaced tuple(t2) - > ", t2)
 
 
@@ -122,9 +122,10 @@ def demo_tuple_dictionary():
 
 
 # DEMOS
-# demo_tuple_creation()
-demo_tuple_operations()
-# demo_tuple_as_function_arg()
-# demo_tuple_as_return_value()
-# demo_tuple_list()
-# demo_tuple_dictionary()
+if __name__ == "__main__" :
+    demo_tuple_creation()
+    # demo_tuple_operations()
+    # demo_tuple_as_function_arg()
+    # demo_tuple_as_return_value()
+    # demo_tuple_list()
+    # demo_tuple_dictionary()
