@@ -1,5 +1,13 @@
 # Notes
 ## Misc Funcs/Concepts
+- () around if/for/while is optional
+- .split(delimiter) - returns list based on delimeter
+- reversed(list) returns listiter object not list itself, so iterate to read values
+- append adds individual elm or list(whole), extend adds individual elem of list to target list
+- for k, v in d2.items():
+        print(k, v, sep="->", end=",")
+- dict = {x: x ** 2 for x in (2, 3, 4)}
+
 ### dir(obj) 
 Returns all properties and methods of the specified object, without the values
 obj can be struct function or any other object, or even can be empty 
@@ -24,6 +32,7 @@ Enters space "  " after print instead of new line
 Print a value (new line) 5 times
 > print("\n" * 5)
 
+> print(f"Let us celebrate {year} {event}")
 Substitute operator uses {}.format 
 > print("first_name {}".format(a))
 
@@ -78,6 +87,7 @@ def demo_slices():
     str = "Hello World"
     print("First 7 : ",str[0:7])                # Hello W
     print("Last 4 : ", str[-4:])                # orld
+    print("Last 5th to last 1st", str[-5:-1])   # Worl
     print("First 3 : ", str[:3])                # Hel
     print("third onward : ", str[3:])           # lo World
     print("Effectively None : ", str[3:3])      # "" i.e empty string
@@ -96,11 +106,12 @@ def demo_immutable_string():
 def demo_string_func():
     str =  "Hello Python"
     print("Capitalize first letter of each word: ", "hello world".capitalize()) # Hello World
-    print("Count of char c: ", str.count("l", 0, len(str)))                     # 2
     print("length of string is : ", len(str))
     print("string in upper case ", str.upper())                                 # all upper case
-    print("lstrip demo:", "44444      Hello World!!!!!!!".lstrip('4'))          # all 4 and space
-    print("rstrip demo:", "44444      Hello World!!!!!!!".rstrip('!'))          # all ! and space
+    
+    print("Count of char c: ", str.count("l", 0, len(str)))                     # 2
+    print("lstrip demo:", "44444      Hello World!!!!!!!".lstrip('4'))          # all 4 from left till other char starts
+    print("rstrip demo:", "44444      Hello World!!!!!!!".rstrip('!'))          # all ! from the right till other char starts
     print("Index of P : ", str.index('P'))
     print("Index of Python : ", str.find("Python"))
     print("Check if string has e : ", 'e' in str)                   # True
@@ -132,7 +143,7 @@ def demo_string_func():
     for item in list_hetro :
         print(item, end = "  ")
 
-    print("Access list element through Indexes, e.g index 3 is list : ", list_hetro[3])
+    print("Access list element through Indexes, e.g elem at index 3 is list : ", list_hetro[3])
     print("..and its second element is : ", list_hetro[3][1])
 
     list_hetro[2] = [1,2]
@@ -160,6 +171,9 @@ Most list methods modifies the argument and return None . This is the opposite o
 * slice works similar to string
 * append/extend modifies the list whereas + operator creates new list
 * slice also creates a new list
+
+* new_list = lst[start:stop:step] e.g. reversed_list = lst[::-1]
+
 
 ```python
     mylist1 = [10,20,30]
@@ -206,7 +220,13 @@ Most list methods modifies the argument and return None . This is the opposite o
     list4.append(3) # this does not return list
     print("append method updates itself but does not return list : ", list4)
 
-    list4.extend(list1) # this also does not return list
+    another_list = [4,5]
+    list4.append(another_list) # will output [1,2,3,[4,5]] not [1,2,3,4,5]
+    print("append adds whole list not individual elem : ", list4)
+    
+    lst_to_extend = [6,7]
+    list4.extend(lst_to_extend) # this does not return list but adds 6, 7 to existing list make list4 = [1, 2, 3, [4, 5], 6, 7]
+    print(list4)
     print("extend function updates itself but does not return list : ", list4.extend(list1))
 ```
 Adding few more 
@@ -250,3 +270,41 @@ Adding few more
     a[1] = 10
     print("As second element of a got modified, c will change too : ", c)
 ``` 
+
+## Dictionary
+Iterate through dict items, separtor and eol customized
+```py
+    for k, v in d2.items():
+        print(k, v, sep="->", end=",")
+``` 
+Dictionaries have keys() values() and items() to get keys, values and key-value pairs.
+but get list of keys/values do it explicitely e.g. list(dict.keys()) 
+
+### sorted()
+dict = sorted(dict) to sort dictionary(on keys) or other containers e.g. list and tuples 
+### zip 
+zip function to zip two list to make a dictionary
+
+## You can use iterator only once. You can use itertools' tee function to create copy of iterators
+```py
+    reversed_list = reversed(range(5, 15, 2))
+    for i in reversed_list:
+        print(i, end = "  ")
+    print()
+    # it does not print anything in below loop
+    for j in reversed_list:
+        print(j, end = "  ")
+    print()
+
+    # you can use itertools' tee function to create copy of iterators
+    r_list = reversed(range(5, 15, 2))
+    it1, it2 = itertools.tee(r_list,2)
+
+    for j in it1:
+        print(j, end = "  ")
+    print()
+    
+    for j in it2:
+        print(j, end = "  ")
+    print()    
+```
