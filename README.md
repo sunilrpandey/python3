@@ -7,6 +7,7 @@
 - for k, v in d2.items():
         print(k, v, sep="->", end=",")
 - dict = {x: x ** 2 for x in (2, 3, 4)}
+- set : unordered collection of unique element, {}
 
 ### dir(obj) 
 Returns all properties and methods of the specified object, without the values
@@ -282,29 +283,88 @@ but get list of keys/values do it explicitely e.g. list(dict.keys())
 
 ### sorted()
 dict = sorted(dict) to sort dictionary(on keys) or other containers e.g. list and tuples 
-### zip 
-zip function to zip two list to make a dictionary
 
-## You can use iterator only once. You can use itertools' tee function to create copy of iterators
-```py
-    reversed_list = reversed(range(5, 15, 2))
-    for i in reversed_list:
-        print(i, end = "  ")
-    print()
-    # it does not print anything in below loop
-    for j in reversed_list:
-        print(j, end = "  ")
-    print()
+## Set
+Unordered collection of unique element, {},  It provides various set relatd operations
+```python
+    s1 = set("test")
+    print("s1 (test) -> ", s1) # will outpu {'t', 's', 'e'}
 
-    # you can use itertools' tee function to create copy of iterators
-    r_list = reversed(range(5, 15, 2))
-    it1, it2 = itertools.tee(r_list,2)
+    s2 = set("Taste")
+    print("s2 (Taste) -> ", s2) # will output {'s', 't', 'a', 'e', 'T'}
 
-    for j in it1:
-        print(j, end = "  ")
-    print()
-    
-    for j in it2:
-        print(j, end = "  ")
-    print()    
+    print("s1 - s2 -> ", s1 - s2)  # in s1 but not in s2
+    print("s2 - s1 -> ", s2 - s1)  # in s2 but not in s1
+    print("s1 | s2 -> ", s1 | s2)  # in s1 or s2
+    print("s1 & s2 -> ", s1 & s2)  # both in s1 and s2
+    print("s1 ^ s2 -> ", s1 ^ s2)  # in s1 or s2 but not in both
 ```
+## Tuple
+A tuple is a sequence of values. The values can be any type, and they are indexed by integers, so in that respect tuples are a lot like lists.
+The important difference is that tuples are immutable.
+
+zip is a built-in function that takes two or more sequences and “zips” them into a list of tuples where each tuple contains one element from each sequence.
+In Python 3, zip returns an iterator of tuples, but for most purposes, an iterator behaves like a list.
+
+Tuple supports functions such as sort, compare operators(compares begining to end)
+### Creations 
+```py
+    empty_tuple = tuple()
+    print("empty tuple -> ", empty_tuple)
+
+    t = "a", "b", "c", "d", "e"
+    print("tuple from values -> ", t)
+
+    # or represent it using (better)
+    t1 = ("a", "b", "c", "d", "e")
+    print("tuple from values -> ", t1)
+
+    # string to tuple elements
+    t2 = tuple("abrakadabra")
+    print("tuple elements from t2 -> ", t2) # it allows duplicates as well
+
+    # access method is same as list i.e. 0 based l;
+    print("t2[0] -> {}\nt2[3:6] -> {}".format(t2[0], t2[3:6]))
+
+    # you can not modify tuple elements but can replace tuple
+    #t3 = t2[0] + t2[3:6] # not working, says can not concatanate
+    t2 = ("A",) + t2[3:6] # please do notice , after "A"
+    print("relaced tuple(t2) - > ", t2)
+```
+
+# Variable scope
+### global 
+It can be read from the code but if you want to update you have to declare locally
+    global x
+global is not required if it is mutable such as list, dictioanary and sets
+### nonlocal
+Basically used for nested function, need to declare locally if variable is defined in outer nested function.
+Local/nonlocal variable will get precedence over global one
+```py
+spam = "temp"
+def demo_scope_test():
+    def do_local():
+        spam = "local spam"
+
+    def do_nonlocal():
+        nonlocal spam
+        spam = "nonlocal spam"
+
+    def do_global():
+        global spam
+        spam = "global spam"
+        #print(spam) # will print updated value here only
+
+    spam = "test spam"
+    do_local()
+    print("After local assignment:", spam)
+    do_nonlocal()
+    print("After nonlocal assignment:", spam)
+    do_global()
+    print("After global assignment:", spam)
+```
+Outside demo_scope_test, its modified global value that would be available, verify it using 
+```py
+    print("In global scope:", spam) # will print "global spam" modified by do_global function
+```
+
