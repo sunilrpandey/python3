@@ -33,26 +33,32 @@ def demo_looping_techniques_for_containers():
         print(k, v, end=" , ")
     print()
 
+    
     # for list values would be list of items
     l = [10, 20, 30, 40]
     for k, v in enumerate(l):
         print(k, v, sep="->", end=" , ")
     print()
+    
+    print("Iterate using list comprehension..")
+    [print(i, end="  ") for i in l]
+    print()
 
     # create key value pair from two list
+    print("Zipping two list to create dictionary..")
     keys = [1, 2, 3]
     values = ["one", "two", "three"]
     for k, v in zip(keys, values):
         print(k, v, end=" , ")
-    print("\n")
+    print()
 
     # sort the list
-    print("sorted values : ", sorted(values))
+    print("Sorted values : ", sorted(values))
 
     # reversed range
     for i in reversed(range(5)):
         print(i, end="  ")
-    print("\n")
+    print()
 
     # reversed range, beg, eng, steps
     # and create list of such entries
@@ -61,8 +67,31 @@ def demo_looping_techniques_for_containers():
         reversed_list.append(i)
 
     print(reversed_list)
-    print("\n")
+    print()
+
+def demo_var_assignment():
+    a, b = 3, 5
+    print("a = {}, b = {}".format(a, b))
+
+    # c , d = 1,23,45 # error, too many parameters
+
+    b, a = a, b
+    print("a = {}, b = {}".format(a, b))
+
+    username, service_provider = "abc.def@gmail.com".split("@")
+    print("username = {},service_provider = {}".format(username, service_provider))
+
+def demo_iterable_sequences():
+    l1 = ["One","Two","Three"]
+    l2 = [1,2,3]
+
+    merged_list = list(itertools.chain(l1,l2))
+    print(merged_list)
+
 
 if __name__ == "__main__":
-    demo_use_iter_only_once()
-    demo_looping_techniques_for_containers()
+    #demo_use_iter_only_once()
+    #demo_looping_techniques_for_containers()
+    #demo_var_assignment()
+    demo_iterable_sequences()
+    
