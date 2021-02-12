@@ -32,12 +32,31 @@ def demo_recursive_function():
 
 def demo_for_loop():
     print("Enter number to write mult table : ", end=" ")
-    num = int(input())
+    #num = int(input())
+    num = 5
     for i in range(11):
         if i == 0:  # works without () too
             continue
 
         print(num * i)
+    print("Iterate through string using two steps..")
+    s = "Honesty is the best policy"
+    for elem in s[::2]:
+        print(elem, end = ",")
+    print()
+
+    print("Demo backward iteration...")
+    for elem in s[::-1]:
+        print(elem, end = "")
+    print()
+    print("..backward step by 2")
+    s = [1,2,3,4,5,6,7,8,9]
+    for elem in s[::-2]:
+        print(elem, end = " ")
+    print()
+
+
+
 
 
 def demo_nested_for_loop():
@@ -51,9 +70,10 @@ def demo_nested_for_loop():
             print("%3d" % (c * (r + 1)), end="  |  ")
         print("\n")
 
-
 if __name__ == "__main__":
     # demo_while_if_else()
     # demo_recursive_function()
     demo_for_loop()
     # demo_nested_for_loop()
+
+    
