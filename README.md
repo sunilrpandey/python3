@@ -1,4 +1,6 @@
 # Notes
+## TODO:
+reduce n accumulate
 ## Misc Funcs/Concepts
 - () around if/for/while is optional
 - .split(delimiter) - returns list based on delimeter
@@ -8,6 +10,15 @@
         print(k, v, sep="->", end=",")
 - dict = {x: x ** 2 for x in (2, 3, 4)}
 - set : unordered collection of unique element, {}
+- for loop for range(for i in list), while uses in operator
+- In Set order can change as it is not  
+- reverse of list is list[::-1]
+ - lst.sort(reverse=True, key=int) // specify list has integer in form of string
+ - merge list using extend,append,iterate or itertools.chain
+ - len(2d_list) or list of list will return number of lists, to know number of item iterate through or recursively these lists, or hetrogenous lists
+ - type(elem) == list, to check if elem is list
+ - map(lambda x : x%2 == 1, lst) //lambda applies on each elemnt of lst
+
 
 ### dir(obj) 
 Returns all properties and methods of the specified object, without the values
@@ -50,7 +61,7 @@ def reuse_fun(message):
 def pass_func_as_arg_toprint(f, msg):
     f(msg)
 ```
-Python have conditional control, recursion, nested loop, break/continue etc
+Python has conditional control, recursion, nested loop, break/continue etc
 ```python
 def demo_while_if_else():
     print("Given number to compare : ")
@@ -132,8 +143,21 @@ def demo_string_func():
 * list is mutable so can replace one item by another
 * has 'in' and 'not in' operator
 * can iterate thorugh range(n), i.e. 0 to n-1
+* search item in list using in/not in operator, list.count(item) returns number of itme in list
+
+Most list methods modifies the argument and return None . This is the opposite of the string methods, which return a new string and leave the original alone.
+
 ### List creation and access
 ```python
+    lst = [] # empty list
+    print(lst)
+
+    lst = ["Hello"] * 5 #[ 'Hello', 'Hello', 'Hello', 'Hello', 'Hello']
+    print(lst)
+
+    lst = ["World" for i in range(5)] # ['World', 'World', 'World', 'World', 'World']
+    print(lst)
+
     list_is_seq = [10,23,45,67]
     print ("Element of list can be homogeneous as : ",list_is_seq)
 
@@ -166,7 +190,7 @@ Most list methods modifies the argument and return None . This is the opposite o
 * Use reverse, min, max, len
 * del list[id], id can be index or slice syntaxes as well 
 * list.remove(item), takes item as argument not index
-* index(item), insert, pop(index),pop(), remove(item), sort, sum
+* index(item), insert, pop(index), pop(), remove(item), sort, sum
 * append(new_item), extend(new_list)
 * list1 + list to add two list, list * num to multiply list items 
 * slice works similar to string
@@ -174,7 +198,8 @@ Most list methods modifies the argument and return None . This is the opposite o
 * slice also creates a new list
 
 * new_list = lst[start:stop:step] e.g. reversed_list = lst[::-1]
-
+* In list remove uses item where as del  uses index
+* Delete last element, del lst[-1]
 
 ```python
     mylist1 = [10,20,30]
@@ -281,6 +306,10 @@ Iterate through dict items, separtor and eol customized
 Dictionaries have keys() values() and items() to get keys, values and key-value pairs.
 but get list of keys/values do it explicitely e.g. list(dict.keys()) 
 
+Check if key availabe using 
+  - key in dict
+  - key in keys
+  - d[key] is 'KeyError'
 ### sorted()
 dict = sorted(dict) to sort dictionary(on keys) or other containers e.g. list and tuples 
 

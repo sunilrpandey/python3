@@ -5,6 +5,11 @@ Program python on VSCode
 2. python3 --version
 3. Right click on editor and you can run whole file in terminal, or select few line and run etc
 
+## Compile python file to bytecode (.pyc)
+```py
+python -m compileall .
+```
+
 ## set default python to python3  if it is python27
 Add below line to ~/.bashrc
 ```sh
@@ -30,7 +35,20 @@ Select the option(index for python 3.8) from list of alternatives what one can g
 ```sh
 sudo update-alternatives --config python3
 ```
-
+## Install pip
+```py
+sudo apt install python3-pip
+```
+## Python tools
+### black
+```py
+sudo pip3 install black
+black folder/
+black filename
+black . # all file in current dir
+black --check . # in current, only check, dont format
+black --check --diff filename.py # shows what needs to be done but doesn’t modify.
+```
 ## Debugging
 1. Set breakpoint using F9 or click same as visual studio
 2. Initialize debugger usign F5, select Python file for now.
