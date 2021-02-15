@@ -7,7 +7,8 @@
 # returns an iterator of tuples, but for most purposes, an iterator behaves like a list.
 
 # tuple supports functions such as sort, compare operators(compares begining to end)
-
+# tpl = tuple(lst)
+# in/not in works in tuple
 
 def demo_tuple_creation():
     empty_tuple = tuple()
@@ -32,6 +33,25 @@ def demo_tuple_creation():
     t2 = ("A",) + t2[3:6] # please do notice , after "A"
     print("relaced tuple(t2) - > ", t2)
 
+def insert_at(tpl,pos,item):
+    tpl = tpl[:pos] + (item,) + tpl[pos:] 
+    print("{} inserted at pos {} : ".format(item,pos),tpl)
+    return tpl
+
+def prepend(tpl,item):
+    tpl = (item,) + tpl
+    print("{} prepended : ".format(item),tpl)
+    return tpl
+
+def append(tpl,item):
+    tpl = tpl + (item,) 
+    print("{} appended : ".format(item),tpl)
+    return tpl
+
+def remove_item_at(tpl,pos):
+    print("Removed item {} at {} :".format(tpl[pos],pos) )
+    tpl = tpl[:pos] + tpl[pos + 1 :]
+    return tpl
 
 def demo_tuple_operations():
 
@@ -45,67 +65,67 @@ def demo_tuple_operations():
     tpl = tuple(lst)
     print("Tuple from list : ", tpl)
 
-    a, b = 3, 5
-    print("a = {}, b = {}".format(a, b))
+    tpl = append(tpl,40)
+    tpl = prepend(tpl,5)
 
-    # c , d = 1,23,45 # error, too many parameters
+    print("tpl after append/prepend : ",tpl)
+    tpl = insert_at(tpl,2,15)
 
-    b, a = a, b
-    print("a = {}, b = {}".format(a, b))
-
-    username, service_provider = "abc.def@gmail.com".split("@")
-    print("username = {},service_provider = {}".format(username, service_provider))
-
-
-# def tuple_as_function_arg(*t): # pass tuple variable as *t or pass scattered value of tuple
-#    print(t)
-
-
-def tuple_as_function_arg(
-    t,
-):  # it will take only tuple variables not scattered values of tuple
+    tpl = remove_item_at(tpl, 3)
+    print("tuple object after remove item : ", tpl)
+    
+def tuple_as_function_arg_scattered_value_too(*t): # pass tuple variable as *t or pass scattered value of tuple
     print(t)
 
+def tuple_as_function_arg(t,):  # it will take only tuple variables not scattered values of tuple
+    print(t)
 
 def demo_tuple_as_function_arg():
     # tuple_as_function_arg(3,4,5)
     t = (3, 4, 5)
     tuple_as_function_arg(t)  # outputs ((3, 4, 5),)
-    # tuple_as_function_arg(*t) # outputs (3, 4, 5)
-
+    tuple_as_function_arg((3, 4, 5)) # please notice passing tuple not scattered values
+    #tuple_as_function_arg(3, 4, 5) #scattered value does not work
+    
+    tuple_as_function_arg_scattered_value_too(t) #outputs ((3, 4, 5),)
+    tuple_as_function_arg_scattered_value_too(*t) # outputs (3, 4, 5)
+    tuple_as_function_arg_scattered_value_too(3,4,5) # outputs (3, 4, 5) , notice passing scattered values
 
 def tuple_as_return_value():
     return (1, 2, 3)
-
 
 def demo_tuple_as_return_value():
     t = tuple_as_return_value()
     print(t)
 
-
 def demo_tuple_list():
     s = "abcd"
     l = [1, 2, 3, 4]
     t = zip(s, l)
+    #print("zipped object is tuple : ",*t)
     t = list(t)
     # print("Zipped tuple from string & list -> ", *t) # works, converts to tuple
     # print("Zipped tuple from string & list -> ", list(t)) # works, converts to list
     # print("Zipped tuple from string & list -> ", set(t)) # works, converts to
     for c, n in t:
-        print(c, n)
+        print(c, n, end=",")
+    print()
+    print("Another way to show tuple values")
+    for tp_elem in t:
+        print("{}-{}".format(tp_elem[0],tp_elem[1]), end=",")
+    print()
 
     # from tuples to tuples of participants
     cs, ns = zip(*t)
     print("chars = {}, numbers = {}".format(cs, ns))
-
 
 def demo_tuple_dictionary():
     print("Dictionary to tuples, items() gives list of tuples")
     d = {"a": 1, "b": 2, "c": 3}
     # l =  list(d.items())
     # print(l)
-    for c, n in d.items():
-        print(c, n)
+    for tpl in d.items():
+        print(tpl)
 
     print("Even you can convert list of tuples to dictionary")
     lst = [(2, 4), (3, 9), (4, 16)]
@@ -120,12 +140,31 @@ def demo_tuple_dictionary():
     for c, n in d.items():
         print(c, n)
 
+def demo_find_in_tuple():
+    tpl = (23,12,4,5,67,78,12,45)
+    
+    print("Demo : in/not in operator")
+    print("12 present in : ", 12 in tpl)
+    print("120 not present in : ", 120 not in tpl)
+
+    print("120 present in : ", 120 in tpl)
+    print("12 not present in : ", 12 not in tpl)
+
+    print("Get index of an item(67) :", tpl.index(67))
+    print("Count of item 12 in tpl: ", tpl.count(12))
+
+    print("Use count func to find item")
+    print("12 present in : ", tpl.count(12) > 0)
+    print("120 not present in : ", tpl.count(120) is 0)
+
+
 
 # DEMOS
 if __name__ == "__main__" :
-    demo_tuple_creation()
-    # demo_tuple_operations()
-    # demo_tuple_as_function_arg()
-    # demo_tuple_as_return_value()
-    # demo_tuple_list()
-    # demo_tuple_dictionary()
+    # demo_tuple_creation()
+    demo_tuple_operations()
+    #demo_tuple_as_function_arg()
+    #demo_tuple_as_return_value()
+    #demo_tuple_list()
+    #demo_tuple_dictionary()
+    #demo_find_in_tuple()
