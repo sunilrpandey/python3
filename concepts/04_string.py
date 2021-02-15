@@ -18,12 +18,22 @@ def demo_str_2_list():
 
 
 def demo_slices():
+    print("Demo string slices and access me")
     str = "Hello World"
+    print("Last letter :", str[-1])
+    print("Second Last letter :", str[-2])
+    
     print("First 7 : ", str[0:7])
     print("Last 4 : ", str[-4:])
     print("First 3 : ", str[:3])
     print("third onward : ", str[3:])
     print("Effectively None : ", str[3:3])
+    
+    try :
+        print(str[20])
+    except IndexError:
+        print("Index : out of range!!")
+
 
 
 def demo_immutable_string():
@@ -56,9 +66,30 @@ def demo_string_func():
         print("String comparison based on alphabtical order")
 
 
-# === demos
+def demo_words_in_string():
+    l = ["is", "best"]
+    s = "Honesty is the best policy"
 
-# demo_str_2_list()
-# demo_slices()
-# demo_immutable_string()
-demo_string_func()
+    found = all([True if word in s else False for word in l])
+    if found:
+        print("All words in list are part of string")
+
+    #l = ["are", "is", "best"]
+    l = ["aare", "ais", "abest"]
+    s = "Honesty is the best policy"
+    found = any([True if word in s else False for word in l])
+    if found:
+        print("At leaset one word in list is part of string")
+    else:
+        print("None of words in list is part of string")
+
+
+
+if __name__ == "__main__":
+    # demo_str_2_list()
+    # demo_slices()
+    # demo_string_func()
+    # demo_immutable_string()
+
+    demo_words_in_string()
+    

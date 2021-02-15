@@ -334,6 +334,7 @@ def apply_lambda(lmbda,lst):
 
 def cond_dev_by_13(item):
     return item % 13 == 0 
+
 def demo_get_conditional_num_elem_using_sum_map():
     lst = [10,26,45,65,45,12,65,34,65] 
     
@@ -348,7 +349,7 @@ def demo_get_conditional_num_elem_using_sum_map():
     count = len([item for item in lst if lmbda_devby_5(item)])
     print("Total nums divided by 5 (using list comprehension) : {}".format(count))
     
-
+    # total numbers divided by 13
     count = sum(cond_dev_by_13(item) for item in lst)
     print("Total nums divided by 13 : ", count)
 

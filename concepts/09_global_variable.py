@@ -64,6 +64,13 @@ def demo_non_local():
     print(n)
 
 
+def demo_global_list_and_update():
+    glb_list = globals();
+    print("Global list : ", glb_list)
+    glb_list['gv'] = 15 # gv should be string
+    print("global gv = ", gv)
+
+
 
 
 # demo_non_local()
@@ -76,7 +83,8 @@ def demo_update_global_vars():
 
 if __name__ == "__main__":
     # demo_update_global_vars()
-    demo_scope_test()
-    print("In global scope:", spam)
+    #demo_scope_test()
+    #print("In global scope:", spam)
     # demo_global()
     #demo_non_local()
+    demo_global_list_and_update()
