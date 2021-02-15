@@ -63,46 +63,52 @@ re.compile(r'[^b]at')                       // all 'at' but not bat
 re.compile(r'\d\d.\d\d.\d\d\d') is same as re.compile(r'\d{2}.\d{2}.\d{3}')
 ```
 
-Group  
-Names    
+## Few examples
+Check pattern in given names e.g. Mr. S etc
+```py
 re.compile(r'M(r|s|rs)\.?\s[A-Z]\w*') # Mr. S    
 re.compile(r'(Mr|Ms|Mrs)\.?\s[A-Z]\w*') # Mr. S  
+```
 
-Email   
+Check pattern for email ids
+```py
 re.compile(r'[a-zA-Z]+@[a-z]+\.com') # for emails  having alphabets only      
 re.compile(r'[a-zA-Z0-9.-_]+@[a-z]+\.(com|edu|net)') # for emails  having alphabets only  
+```
 
-generic pattern for email address  
+Generic pattern for email address
+```py  
 re.compile(r'[a-zA-Z0-9+.-_]+@[a-zA-Z0-9-]+\.[a-zA-Z0-0-.]+') # for emails  having alphabets only
-
-
-
-urls  
+```
+Pattern for URLs
+```py
 pattern = re.compile(r'https?://(www\.)?(\w+)(\.\w+)')   
 matches = pattern.finditer(text_to_search)  
 for match in matches   
-print match.group(0) // print whole match  
-print match.group(1) // 1 onward prints group of the matches
+    print match.group(0) // print whole match  
+    print match.group(1) // 1 onward prints group of the matches
 
 pattern = re.compile(r'https?://(www\.)?(\w+)(\.\w+)')     
 sub_urls = pattern.sub(r'\2\3', urls)
 print(sub_urls)
-
+```
+### Finditer vs Findall
 finditer - including infos too    
 find all - only matches, if group matches returns groups
 
+### match vs search
 match - just returns first match or none not iter,  matches at the begining only  
 search - search entire string  
 
-Flags  
+### Flags  
 
 re.compile(r'start',re.IGNORECASE)
 re.compile(r'start',re.I)
 
-ref  
-https://www.youtube.com/watch?v=K8L6KVGG-7o
-https://github.com/CoreyMSchafer/code_snippets/tree/master/Python-Regular-Expressions  
-https://coreyms.com/
+References:  
+https://www.youtube.com/watch?v=K8L6KVGG-7o  
+https://github.com/CoreyMSchafer/code_snippets/tree/master/Python-Regular-Expressions    
+https://coreyms.com/  
 
 
 

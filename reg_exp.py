@@ -1,3 +1,6 @@
+#match matches if it starts with pattern, search matches whole string
+
+
 import re
 
 
@@ -55,14 +58,14 @@ def demo_verify_num_patterns():
     for match in matches:
         print(match)
         
-saluations = '''
-Mr Fox
-Mr. fox
-Mrs Fox
-Mr B
-'''
 
 def demo_match_saluations():
+    saluations = '''
+    Mr Fox
+    Mr. fox
+    Mrs Fox
+    Mr B
+    '''
     print("Demo: Mr or Mr.")
     pat = re.compile(r'Mr\.?') # ? after char  0 or 1
     matches = pat.finditer(saluations)
@@ -77,36 +80,35 @@ def demo_match_saluations():
     for m in matches:
         print(m)
 
-#def demo_email_verifier():
-#    pattern
-
-
 def demo_raw_string():
     print("Demo : demo_raw_string()")
-    print("For raw string append string with `r`")
+    print("For raw string prepend string with `r`")
     print('\tTab')
     print(r'\tTab')
-#
-#text = "abc345sdfajsdabc"
-#pattern = re.compile(r'abc')
-#matches = pattern.finditer(text)
-#for match in matches:
-#    print(match)
 
-pattern = re.compile(r'\d\d.\d\d.\d\d') 
-re.compile(r'\d\d.\d\d.\d\d') 
-with  open('file.txt','r', encoding='utf-8') as f:
-    contents = f.read()
-    matches = pattern.finditer(contents)
+
+def demo_finditer():
+    text = "abc345sdfajsdabc"
+    pattern = re.compile(r'abc')
+    matches = pattern.finditer(text)
     for match in matches:
         print(match)
-        print(match.span())
+
+def demo_check_patterns():
+    pattern = re.compile(r'\d\d.\d\d.\d\d') 
+    #re.compile(r'\d\d.\d\d.\d\d') 
+    with  open('file.txt','r', encoding='utf-8') as f:
+        contents = f.read()
+        matches = pattern.finditer(contents)
+        for match in matches:
+            print(match)
+            print(match.span())
 
 
 def demo_regular_expression():
     demo_raw_string()
 
-def demo_match_and_earch_method():
+def demo_match_and_search_method():
     print("Demo : demo_match_and_earch_method()")
     print("Match matches only if it start with a pattern, similar to ^pattern")
     pattern = re.compile(r'Honesty',re.I) # flag to ignore case
@@ -128,8 +130,30 @@ def mimick_match_method_using_findall():
     for out in res:
         print("Mimicking match Method : ", out)
 
+def demo_check_urls():
+    urls = '''
+    https://www.google.com
+    http://coreyms.com
+    https://youtube.com
+    https://www.nasa.gov
+    '''
+
+    pattern = re.compile(r'https?://(www\.)?(\w+)(\.\w+)')   
+    matches = pattern.finditer(urls)  
+    for match in matches:   
+        print(match.group(0)) # print whole match  
+        print(match.group(1)) # 1 onward prints group of the matches
+
+    pattern = re.compile(r'https?://(www\.)?(\w+)(\.\w+)')     
+    sub_urls = pattern.sub(r'\0\1\2\3', urls)
+    print(sub_urls)
+
 if __name__ == "__main__":
     #demo_regular_expression()
-    #demo_match_and_earch_method()
+    #demo_match_and_search_method()
     #demo_verify_num_patterns()
-    demo_match_saluations()
+    #demo_match_saluations()
+    #demo_finditer()
+    #demo_check_patterns()
+    #mimick_match_method_using_findall()
+    demo_check_urls()
