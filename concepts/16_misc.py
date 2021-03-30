@@ -8,6 +8,7 @@ import itertools
 # yield , like return values but does not return 
 # Generator, like an iterator for functin etc which generates yields
 
+
 def demo_use_iter_only_once():
     print("Demo : use iterators more than once") 
     reversed_list = reversed(range(5, 15, 2))

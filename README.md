@@ -1,6 +1,8 @@
 # Notes
+
 ## TODO:
 reduce n accumulate
+
 ## Misc Funcs/Concepts
 - () around if/for/while is optional
 - .split(delimiter) - returns list based on delimeter
@@ -13,12 +15,11 @@ reduce n accumulate
 - for loop for range(for i in list), while uses in operator
 - In Set order can change as it is not  
 - reverse of list is list[::-1]
- - lst.sort(reverse=True, key=int) // specify list has integer in form of string
- - merge list using extend,append,iterate or itertools.chain
- - len(2d_list) or list of list will return number of lists, to know number of item iterate through or recursively these lists, or hetrogenous lists
- - type(elem) == list, to check if elem is list
- - map(lambda x : x%2 == 1, lst) //lambda applies on each elemnt of lst
-
+- lst.sort(reverse=True, key=int) // specify list has integer in form of string
+- merge list using extend,append,iterate or itertools.chain
+- len(2d_list) or list of list will return number of lists, to know number of item iterate through or recursively these lists, or hetrogenous lists
+- type(elem) == list, to check if elem is list
+- map(lambda x : x%2 == 1, lst) //lambda applies on each elemnt of lst
 
 ### dir(obj) 
 Returns all properties and methods of the specified object, without the values
@@ -26,13 +27,13 @@ obj can be struct function or any other object, or even can be empty
 ```py
     number = [1, 2, 3]
     print(dir(number))
-
     print(dir())  # also valid
 ```
 
 ## Python tools
 - pylint : install using pip/pip3
 - black : install using pip/pip3 // for formatting
+
 ### Useful VS Code extension
 - pylance
 - bookmarks
@@ -60,6 +61,7 @@ def reuse_fun(message):
     
 def pass_func_as_arg_toprint(f, msg):
     f(msg)
+
 ```
 Python has conditional control, recursion, nested loop, break/continue etc
 ```python
@@ -397,3 +399,25 @@ Outside demo_scope_test, its modified global value that would be available, veri
     print("In global scope:", spam) # will print "global spam" modified by do_global function
 ```
 
+# More about file handling
+Check if file is empty
+``` 
+os.stat(path, *, dir_fd=None, follow_symlinks=True)
+os.stat(file_path).st_size == 0 to check if file is empty
+os.path.getsize(path)
+fileStatsObj = os.stat ( filePath )
+modificationTime = time.ctime ( fileStatsObj [ stat.ST_MTIME ] )
+accessTime = time.ctime ( fileStatsObj [ stat.ST_ATIME ] )
+os.path.getmtime(path)
+
+modificationTime = time.strftime('%d/%m/%Y', time.localtime(os.path.getmtime(filePath)))
+accessTimesinceEpoc = os.path.getatime(filePath)
+accessTime = time.strftime('%Y-%m-%d %H:%M:%S', time.gmtime(accessTimesinceEpoc))
+
+
+#open file and read first char
+one_char = read_obj.read(1)
+# if not fetched then file is empty
+if not one_char:
+    return True
+```

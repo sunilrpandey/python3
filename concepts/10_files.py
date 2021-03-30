@@ -1,6 +1,9 @@
 import sys
 import os
-
+# open multiple file using with open
+# with open('outfile.txt', 'w') as file_obj_2, open('sample.txt', 'r') as file_obj_1:
+# line.strip() to remove newline character from teh line
+# os.remove(path_of_file) - remove file OR os.unlink(filePath)
 
 def write_file(name, mode):
     test_file = open(name, mode)
