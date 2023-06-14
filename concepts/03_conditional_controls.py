@@ -37,8 +37,8 @@ def demo_for_loop():
     for i in range(11):
         if i == 0:  # works without () too
             continue
-
         print(num * i)
+
     print("Iterate through string using two steps..")
     s = "Honesty is the best policy"
     for elem in s[::2]:
@@ -71,9 +71,9 @@ def demo_nested_for_loop():
         print("\n")
 
 if __name__ == "__main__":
-    # demo_while_if_else()
-    # demo_recursive_function()
+    demo_while_if_else()
+    demo_recursive_function()
     demo_for_loop()
-    # demo_nested_for_loop()
+    demo_nested_for_loop()
 
     

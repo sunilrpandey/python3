@@ -84,6 +84,12 @@ def check_if_palindrome(str):
     print(is_palindrome)
     return is_palindrome
 
+def demo_join_list_of_string():
+    lst_of_str = ["this", "is", "complete", "string"]
+    complete_str = " ".join(str for str in lst_of_str)
+    print(complete_str)
+
+
 
 def demo_tricks():
     # take_more_than_one_input()
@@ -94,6 +100,7 @@ def demo_tricks():
     # multiple_statement_in_oneline_in_list()
     # demo_variable_arg()
     # reverse_string()
+    # demo_join_list_of_string()
     check_if_palindrome("madam")
 
 

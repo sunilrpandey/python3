@@ -19,7 +19,7 @@ def demo_str_2_list():
 
 def demo_slices():
     print("Demo string slices and access me")
-    str = "Hello World"
+    str = "Hello World"  
     print("Last letter :", str[-1])
     print("Second Last letter :", str[-2])
     
@@ -83,9 +83,18 @@ def demo_words_in_string():
     else:
         print("None of words in list is part of string")
 
+def reverse(str):
+    return str[::-1]
 
+def isPalindrome(str):
+    return str == reverse(str)
+        
+    
 
 if __name__ == "__main__":
+    # print(reverse("anystring"))
+    # print(isPalindrome("madam"))
+    
     # demo_str_2_list()
     # demo_slices()
     # demo_string_func()

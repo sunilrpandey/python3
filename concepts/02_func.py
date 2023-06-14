@@ -1,5 +1,5 @@
 import math
-# function param order : formal arg, *args,default,**kwargs
+# function param order : formal arg, *args, default, **kwargs
 # #args as name does not matter
 # print(math)
 # **kwargs for it keys should be string only not in // need to confirm #TODO
@@ -72,6 +72,7 @@ def demo_unpack_func_for_Containers():
     print("print list using func with total number of params")
     lst = [1,"one",2.5]
     print_vals(*lst)
+    #print_var_args(*lst) this will also work
 
     print("User var arg version if you are not sure about number element in list")
     lst = [1,"one",2.5,[2,3,4],"hello"]    
@@ -89,7 +90,7 @@ def demo_unpack_func_for_Containers():
     print("Unpack dictionary..")
     d = {'1':"one",'2':"two"}
     print_key_value_of_variable_length(**d)
-    
+     
 
 
 
@@ -97,11 +98,10 @@ def demo_unpack_func_for_Containers():
 
     
 if __name__ == "__main__":
-    # demo_math()
-    # demo_reuse_funcs()
-    # demo_pass_func_as_arg_toprint(func_with_msg, "Func as arg is being used to print")
-    #demo_join_list_of_string()
+    demo_math()
+    demo_reuse_funcs()
+    demo_pass_func_as_arg_toprint(func_with_msg, "Func as arg is being used to print")
     demo_func_with_var_args()
 
-    #demo_unpack_func_for_Containers()
+    demo_unpack_func_for_Containers()
 

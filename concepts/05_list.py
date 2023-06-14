@@ -422,7 +422,7 @@ def demo_convert_nested_list_to_flat_list():
 
 if __name__ == "__main__":
     # demo_list_create()
-    # demo_list_element_access()
+    demo_list_element_access()
     # demo_list_operations()
     # demo_list_operations_ex()
     # demo_string_list_of_char_comparison()
@@ -443,9 +443,4 @@ if __name__ == "__main__":
     # demo_check_duplicates_in_list()
     # demo_convert_list_to_string()
 
-    demo_convert_nested_list_to_flat_list()
-
-    
-
-
-
+    # demo_convert_nested_list_to_flat_list()
