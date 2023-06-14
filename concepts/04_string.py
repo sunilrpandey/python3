@@ -92,13 +92,13 @@ def isPalindrome(str):
     
 
 if __name__ == "__main__":
-    # print(reverse("anystring"))
-    # print(isPalindrome("madam"))
+    print(reverse("anystring"))
+    print(isPalindrome("madam"))
     
-    # demo_str_2_list()
-    # demo_slices()
-    # demo_string_func()
-    # demo_immutable_string()
+    demo_str_2_list()
+    demo_slices()
+    demo_string_func()
+    demo_immutable_string()
 
     demo_words_in_string()
     
