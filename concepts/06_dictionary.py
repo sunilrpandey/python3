@@ -193,11 +193,12 @@ def demo_convert_list_to_dict():
 # ==== demos
 if __name__ == "__main__":
     """function(a, b) -> list"""
-    # demo_dictionary_creation()
-    # demo_dictionary_operations()
-    # demo_filter_dictionary()
-    # demo_json_dump()
+    demo_dictionary_creation()
+    demo_dictionary_operations()
+    demo_filter_dictionary()
+    demo_json_dump()
     demo_convert_list_to_dict()
+    
     #todemo: zip twolist and then dict(zippedlists)
     #todemo: list of tuples to dict(listoftuples)0
     # sort based on key
