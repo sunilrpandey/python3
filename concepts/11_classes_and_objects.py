@@ -77,7 +77,18 @@ def demo_class():
     test_animals.get_type(cat)
     test_animals.get_type(dog)
 
+class AnimalWithPass:
+    pass
+
+
+
+def classInstanceWithPass():
+    ani = AnimalWithPass()
+    ani.address = "Home"
+    print("Animal Address : {}".format(ani.address))
+    
 
 if __name__ == "__main__":
-    demo_class()
+    classInstanceWithPass()
+    # demo_class()
     # demo_reusability()
