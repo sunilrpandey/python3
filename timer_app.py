@@ -18,7 +18,7 @@ print("The current date and time is", currentDateAndTime)
 currentTime = currentDateAndTime.strftime("%H:%M:%S")
 print("Time Now : ", currentTime)
 print(datetime.today().strftime("%I:%M %p"))
-#CreateTimerApp()
+CreateTimerApp()
 
 
 
