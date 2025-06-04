@@ -50,6 +50,7 @@ def demo_dictionary_creation():
     return
 
 
+
 def if_key_exist(dict, key):
     """function(a, b) -> list"""
     try:
@@ -190,14 +191,42 @@ def demo_convert_list_to_dict():
     d = dict(Counter(l))
     print(d)
 
+def if_key_exist1(dict:dict, key:int)->(bool, int):
+    """function(a, b) -> list"""
+    try:
+        value = dict[key]
+        return True, value
+    except:
+        return False, -1
+    
+def demo_if_key_exist1():
+    alfa_info = {}
+    alfa_info[1] = "A"
+    alfa_info[2] = "B"
+    alfa_info[3] = "C"
+    
+    # print(alfa_info) 
+    found, value = if_key_exist1(alfa_info,20)
+    if(found):
+        print(value)
+    else:
+        print("Invalid key")
+        
+        
+    return 
+    
+    
 # ==== demos
 if __name__ == "__main__":
     """function(a, b) -> list"""
-    demo_dictionary_creation()
-    demo_dictionary_operations()
-    demo_filter_dictionary()
-    demo_json_dump()
-    demo_convert_list_to_dict()
+    
+    demo_if_key_exist1()
+    
+    # demo_dictionary_creation()
+    # demo_dictionary_operations()
+    # demo_filter_dictionary()
+    # demo_json_dump()
+    # demo_convert_list_to_dict()
     
     #todemo: zip twolist and then dict(zippedlists)
     #todemo: list of tuples to dict(listoftuples)0

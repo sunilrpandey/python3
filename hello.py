@@ -1,2 +1,2 @@
 print ("Hello Executable!!")
-input()
+ch = input("Press a char to exit!")

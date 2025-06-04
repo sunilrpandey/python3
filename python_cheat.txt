@@ -1,0 +1,53 @@
+num = int(input())
+
+print("Hello Python 3!!, new line after print is overriden by ___", end="___") 
+print(a, b, sep=" : ")
+print("first_name {}".format(a))
+print(f"Let us celebrate {year} {event}")
+print("print new line 5 times","\n" * 5)
+
+def print_var_args(*args):
+    for i in args:
+	example : print_var_args(2,"one",23.5)
+		print_var_args("Hello Data Types : ", 2,"one",23.5,[1,2,3],{1:"one",2:"two"},(4,5,6))
+		lst = [1,"one",2.5,[2,3,4],"hello"]    
+		print_var_args(*lst)
+		tpl = (1,"one",2.5)
+		print_vals(*tpl)
+		
+def print_key_value_of_variable_length(**kwargs):
+    for k,v in kwargs.items():
+        print("{}-{}".format(k,v), end=" , ")
+	example : print_key_value_of_variable_length(arg1="one", arg2="two")
+		d = {'1':"one",'2':"two"}
+		print_key_value_of_variable_length(**d)
+
+def demo_pass_func_as_arg_toprint(f, msg):
+    f(msg)
+
+lst_of_str = ["this", "is", "complete", "string"]
+    complete_str = " ".join(str for str in lst_of_str)
+
+if __name__ == "__main__":
+    print("will be called when this python file is being directly invoked")
+    x = 12
+    print(f"x is {x}")
+else:
+    print("File is being imported.")
+
+---
+for loop
+	for i in range(11): 
+	for c in range(start, end + 1) // follows [start, end+1)
+	for elem in s[::2]: 
+	for elem in s[::-1]:  backward
+	for elem in s[::-2]:  backward step by 2
+
+slices
+	print("Last letter :", str[-1])
+	print("Second Last letter :", str[-2])    
+	print("First 7 : ", str[0:7])
+	print("Last 4 : ", str[-4:])
+	print("First 3 : ", str[:3])
+	print("third onward : ", str[3:])
+	print("Effectively None : ", str[3:3])
